@@ -1,0 +1,52 @@
+
+
+.detail-container {
+    padding: 2rem;
+  }
+  
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 150px);
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 10px;
+  }
+  
+  /* colores ya definidos */
+  .temperature {
+    background-color: rgb(255, 0, 0);
+    grid-area: 1 / 1 / 3 / 3;
+    font-size: 50px;
+  }
+  
+  .humidity {
+    background-color: blue;
+    grid-area: 1 / 3 / 2 / 4;
+  }
+  
+  .wind {
+    background-color: bisque;
+    color: black;
+    grid-area: 1 / 4 / 2 / 5;
+  }
+  
+  .iqa {
+    background-color: rgb(116, 25, 131);
+    grid-area: 2 / 3 / 3 / 5;
+  }
+  
+  .charts-section {
+    margin-top: 2rem;
+  }
+  

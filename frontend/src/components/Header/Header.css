@@ -1,0 +1,128 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  color: rgb(239, 235, 235);
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #fffcfc;
+  position: relative;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.3rem; /*tamaño de SARQAV*/
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  /*font-family: 'Courier New', Courier, monospace; /*cambiaremos el tipo de texto*/
+}
+
+.header-center {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex: 1;
+}
+
+.header-center a {
+  text-decoration: none;
+  color: rgb(107, 107, 107);
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  font-size: 12px; /*cambiamos el tamaño  del buscador*/
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-placeholder {
+  /*Tenemos que modificar de modo que no cambie segun la longitud de caractere
+  de la palabra(museum, sustainability, etc) y mejor qu etome el tamaño de la palara con mas caracteres*/
+  font-size: 0.8rem;
+  margin-left: 0.5rem;
+  color: rgb(107, 107, 107);
+  animation: fadeInOut 6s infinite;
+  display: inline-block;
+  position: relative;
+  min-width: 20ch;
+  
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: black;
+  display: none;
+}
+
+.search-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 1rem;
+  background: white;
+  border: 1px solid #fffefe; /*Borde del buscador, lo podemos dejar en blanco*/
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.search-dropdown a {
+  padding: 0.5rem 0;
+  color: black;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.search-dropdown a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header-center {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 1rem;
+  }
+
+  .header-center.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .search-placeholder {
+    display: none;
+  }
+}

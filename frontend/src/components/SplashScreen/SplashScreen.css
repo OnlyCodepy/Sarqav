@@ -1,0 +1,86 @@
+/* 🌑 Estilo principal del splash screen: pantalla completa negra */
+.splash-screen {
+  position: fixed; /* Fija el splash a toda la ventana, sin moverse con el scroll */
+  inset: 0;         /* Equivale a top: 0; right: 0; bottom: 0; left: 0 */
+  background-color: black; /* Fondo negro completo */
+  display: flex;           /* Usa Flexbox para centrar contenido */
+  justify-content: center; /* Centra horizontalmente el texto */
+  align-items: center;     /* Centra verticalmente el texto */
+  z-index: 9999;           /* Se asegura de estar por encima de todo lo demás */
+
+  transition: background-color 0.5s ease;
+  
+  /* 🎬 Animación que desplaza hacia arriba el splash tras 1 segundo */
+  animation: slideUp 1s ease-in-out 2.3s forwards;
+  /*
+    slideUp → nombre de la animación declarada más abajo
+    0.8s → duración de la animación
+    ease-in-out → curva de aceleración suave al inicio y final
+    1s → retardo (empieza 1 segundo después de cargar)
+    forwards → mantiene el estado final de la animación (oculto hacia arriba)
+  */
+}
+
+
+/* ✨ Estilo para cada letra del texto */
+.splash-text span {
+  color: white;         /* Color blanco para cada letra */
+  font-size: 3rem;      /* Tamaño grande del texto */
+  font-weight: bold;    /* Negrita */
+  opacity: 0;           /* Empieza invisible */
+  display: inline-block; /* Necesario para aplicar transformaciones individuales */
+  animation: letterFadeIn 0.4s forwards;
+  /*
+    Cada <span> recibe este efecto de aparición
+    Duración: 0.3s
+    forwards: mantiene la letra visible al terminar
+    El delay individual se aplica con style inline en JSX
+  */
+}
+
+
+/* 🎞️ Animación de entrada de letras (una por una) */
+@keyframes letterFadeIn {
+  0% {
+    opacity: 0;              /* Inicialmente invisible */
+    transform: translateY(10px); /* Ligeramente más abajo (efecto deslizante hacia arriba) */
+  }
+  100% {
+    opacity: 1;              /* Totalmente visible */
+    transform: translateY(0); /* Posición final normal */
+  }
+}
+
+
+/* 🎥 Animación de desplazamiento vertical del fondo negro */
+@keyframes slideUp {
+  0% {
+    transform: translateY(0%); /* Posición inicial (pantalla llena) */
+  }
+  100% {
+    transform: translateY(-100%); /* Se mueve fuera de la vista hacia arriba */
+  }
+}
+
+/* extra
+/* Movimiento del texto desde el centro hacia la esquina superior izquierda */
+.move-to-logo {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  font-size: 2rem;
+  animation: moveLogo 1s ease-in-out forwards;
+  transition: color 0.5s ease;
+  color: black;
+}
+
+@keyframes moveLogo {
+  from {
+    transform: translate(-50%, -50%);
+    color: white;
+  }
+  to {
+    transform: translate(0, 0);
+    color: black;
+  }
+}

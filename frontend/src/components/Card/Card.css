@@ -1,0 +1,31 @@
+.card-container{
+    height: 100vh; /*Damos el tamaño a la ventana gráfica*/
+    width: 100vh;
+    
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr;
+
+}
+
+.temperature{
+    background-color: rgb(156, 130, 130);
+    grid-area: 1/1/3/3;/*ÁreaC:iFILA/ iCOLUMNA/ fFILA/ fCOLUMNA;*/
+
+}
+.humidity{
+    background-color: rgb(87, 87, 100);
+    grid-area: 1/3/2/4;/*ÁreaC:iFILA/ iCOLUMNA/ fFILA/ fCOLUMNA;*/
+    
+}
+
+.wind{
+    background-color: rgb(157, 142, 124);
+    grid-area: 1/4/2/5;/*ÁreaC:iFILA/ iCOLUMNA/ fFILA/ fCOLUMNA;*/
+}
+
+.iqa{
+    background-color: rgb(116, 25, 131);
+    grid-area: 2/3/3/5;/*ÁreaC:iFILA/ iCOLUMNA/ fFILA/ fCOLUMNA;*/
+}

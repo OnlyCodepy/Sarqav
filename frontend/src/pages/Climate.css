@@ -1,0 +1,44 @@
+.climate-container {
+    padding: 2rem;
+  }
+  
+  .climate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.02);
+  }
+  
+  .card h3 {
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .details-button {
+    display: block;
+    margin: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: rgb(130, 145, 145);
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .details-button:hover {
+    background-color: darkcyan;
+  }
+  

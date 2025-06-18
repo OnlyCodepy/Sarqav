@@ -1,0 +1,79 @@
+.footer {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 2rem 1rem;
+  margin-top: 2rem;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+.footer-content {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-socials a {
+  color: black;
+  transition: transform 0.2s ease, color 0.3s ease;
+  font-size: 1.5rem;
+}
+
+.footer-socials a:hover {
+  transform: scale(1.2);
+  color: #80cbc4;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Responsive para desktop */
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-socials {
+    justify-content: flex-end;
+  }
+
+  .footer p {
+    margin: 0;
+  }
+}
+
+/* Estilo íconos individuales */
+.social-icon svg {
+  width: 20px;
+  height: 24px;
+  transition: transform 0.2s ease;
+}
+
+.social-icon:hover svg {
+  transform: scale(1.2);
+}
+
+.social-icon.facebook svg,
+.social-icon.x svg,
+.social-icon.github svg,
+.social-icon.instagram svg,
+.social-icon.linkedin svg {
+  color: black;
+}
